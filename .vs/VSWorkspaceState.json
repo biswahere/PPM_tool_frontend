@@ -1,11 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
+    "\\src\\action",
     "\\src\\Component",
-    "\\src\\Component\\ProjectTask"
+    "\\src\\Component\\project",
+    "\\src\\Component\\ProjectTask",
+    "\\src\\reducers"
   ],
-  "SelectedNode": "\\src\\Component\\ProjectTask\\AddProjectTask.js",
+  "SelectedNode": "\\src\\Component\\project\\AddProject.js",
   "PreviewInSolutionExplorer": false
 }
