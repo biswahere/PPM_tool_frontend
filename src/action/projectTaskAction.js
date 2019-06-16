@@ -5,7 +5,7 @@ export const addProjectTask = (newProjectTask, history) => async dispatch => {
 	// alert(newProjectTask.summary);
 	try{
 	await axios.post("http://localhost:8056/api/projectTask-service/rest/project/createTask",newProjectTask);
-	 history.push("/"); 
+	 history.push("/projectTaskList"); 
 	 dispatch({
 		type: GET_ERRORS,
 		payload: {}
@@ -47,7 +47,7 @@ export const getProjectTask = (pt_id,history) => async dispatch => {
 
 	}catch(error){
 
-		history.push("/");
+		history.push("/projectTaskList");
 		}
 
 };

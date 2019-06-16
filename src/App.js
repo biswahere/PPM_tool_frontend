@@ -25,7 +25,7 @@ class App extends Component {
 			<Route exact path="/AddProject" component={AddProject} />
 			
 		
-			{/* <Route exact path="/" component={ProjectBoard} /> */}
+			<Route exact path="/projectTaskList" component={ProjectBoard} /> 
 		
 			<Route exact path="/addProjectTask" component={AddProjectTask} />
 

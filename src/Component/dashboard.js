@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
-
+import {connect} from "react-redux";
+import {getProjects} from "../action/projectAction";
 import ProjectList from "./project/ProjectList";
+import PropTypes from "prop-types";
 
  class dashboard extends Component {
+	 
+	 componentDidMount(){
+		 this.props.getProjects();
+	 }
+	 
 	render(){
-		return  (
+		
+		const {projects} = this.props.project
+		
+	
+	return  (
 		
 		<div className="projects">
         <div className="container">
@@ -18,8 +29,15 @@ import ProjectList from "./project/ProjectList";
                     </NavLink>
                     <br />
                     <hr />
-
-					< ProjectList />
+                    
+                    {projects.map(project => (
+                    	
+                    	< ProjectList key={project.id} project={project}/>
+                    ))
+                    	
+                    }
+                    
+					
 
                 </div>
             </div>
@@ -32,5 +50,15 @@ import ProjectList from "./project/ProjectList";
 			
 	}
  }
+ 
+ dashboard.propTypes = {
+		 project: PropTypes.object.isRequired,
+		 getProjects: PropTypes.func.isRequired
+ };
+ 
+ const mapStateToProps = state => ({
+	 project:state.project
+	 
+ });
 
-export default dashboard;
+export default connect(mapStateToProps,{getProjects})(dashboard);
