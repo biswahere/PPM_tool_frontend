@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Component/Layout/Header";
 import ProjectBoard from "./Component/ProjectBoard";
 import AddProject from "./Component/project/AddProject";
+import UpdtProject from "./Component/project/UpdtProject";
 import dashboard from "./Component/dashboard";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import AddProjectTask from "./Component/ProjectTask/AddProjectTask";
@@ -23,7 +24,7 @@ class App extends Component {
 
 			<Route exact path="/" component={dashboard} />
 			<Route exact path="/AddProject" component={AddProject} />
-			
+			<Route exact path="/UpdtProject/:id" component={UpdtProject} />
 		
 			<Route exact path="/projectTaskList" component={ProjectBoard} /> 
 		
